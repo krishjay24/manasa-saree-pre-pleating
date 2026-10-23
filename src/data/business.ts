@@ -31,10 +31,10 @@ export const business = {
   },
   contact: {
     /**
-     * Temporary testing WhatsApp number (international, digits only).
-     * Replace this one value with the client's number to update every chat link.
+     * Business WhatsApp number (international, digits only).
+     * Changing this one value updates every chat link.
      */
-    whatsappNumber: '917993930802',
+    whatsappNumber: '919515109420',
     instagramHandle: 'manasa_saree_pre_pleating',
     instagramUrl: 'https://instagram.com/manasa_saree_pre_pleating',
   },

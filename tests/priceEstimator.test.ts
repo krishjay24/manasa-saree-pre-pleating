@@ -84,7 +84,7 @@ describe('buildPriceEstimateMessage', () => {
   it('builds a wa.me link for the configured testing number', () => {
     const estimate = calculatePriceEstimate(byName['Regular Pre-Pleating'], 1)
     const url = whatsAppLink(buildPriceEstimateMessage(estimate))
-    expect(url).toMatch(/^https:\/\/wa\.me\/917993930802\?text=/)
+    expect(url).toMatch(/^https:\/\/wa\.me\/919515109420\?text=/)
     expect(url).toContain(encodeURIComponent('Estimated Total: ₹250'))
   })
 })

@@ -18,7 +18,7 @@ describe('normalizeIndianMobile', () => {
     ['91-98765-43210', '919876543210'],
     ['09876543210', '919876543210'],
     ['6123456789', '916123456789'],
-    ['917993930802', '917993930802'],
+    ['919515109420', '919515109420'],
   ])('normalises %s', (input, expected) => {
     expect(normalizeIndianMobile(input)).toBe(expected)
   })
@@ -61,10 +61,10 @@ describe('formatIndianPhone', () => {
 
 describe('configured business WhatsApp', () => {
   it('uses the single configured testing number', () => {
-    expect(business.contact.whatsappNumber).toBe('917993930802')
-    expect(getConfiguredWhatsAppNumber()).toBe('917993930802')
-    expect(whatsAppLink()).toBe('https://wa.me/917993930802')
-    expect(whatsAppLink(buildGeneralEnquiryMessage())).toContain('https://wa.me/917993930802?text=')
+    expect(business.contact.whatsappNumber).toBe('919515109420')
+    expect(getConfiguredWhatsAppNumber()).toBe('919515109420')
+    expect(whatsAppLink()).toBe('https://wa.me/919515109420')
+    expect(whatsAppLink(buildGeneralEnquiryMessage())).toContain('https://wa.me/919515109420?text=')
   })
 })
 
