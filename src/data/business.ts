@@ -16,7 +16,7 @@ export const business = {
   /** Stated in the client business profile. */
   clientsServed: '500+',
   description:
-    'Saree pre-pleating, box folding, bridal saree preparation and ready-to-wear saree stitching in Kovur, Nellore District.',
+    'Saree pre-pleating, bridal saree preparation and ready-to-wear saree stitching in Kovur, Nellore District.',
   location: {
     locality: 'Kovur',
     district: 'Nellore District',
@@ -68,19 +68,6 @@ export const services: Service[] = [
     occasions: ['Office', 'College', 'Festivals', 'Daily wear'],
     turnaround: '24–48 hours',
     imageId: 'service-regular',
-  },
-  {
-    id: 'box-folding',
-    name: 'Box Folding',
-    localName: 'Box Madi',
-    summary: 'Travel-friendly fold, saree shape intact for days',
-    description:
-      'Pleats and pallu are folded into a neat box shape, so the saree stays crisp in your suitcase or wardrobe until the occasion.',
-    price: 150,
-    fabrics: 'Travel friendly fold',
-    occasions: ['Travel', 'Destination functions', 'Storage before events'],
-    turnaround: '24–48 hours',
-    imageId: 'service-box',
   },
   {
     id: 'bridal',

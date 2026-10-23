@@ -11,6 +11,10 @@ export interface GalleryItem {
   imageId: MediaId
   title: string
   category: GalleryCategoryId
+  /** Photo of Manasa's own work (not a placeholder). */
+  clientOriginal?: boolean
+  /** Original full-resolution file shown in the lightbox. */
+  fullSize?: { src: string; width: number; height: number }
 }
 
 export const galleryCategories: GalleryCategory[] = [
@@ -25,7 +29,17 @@ export const galleryItems: GalleryItem[] = [
   { imageId: 'service-regular', title: 'Mint daily-wear drape', category: 'everyday' },
   { imageId: 'service-bridal', title: 'Sea green bridal silk', category: 'bridal' },
   { imageId: 'gallery-organza-print', title: 'Printed organza', category: 'everyday' },
-  { imageId: 'service-box', title: 'Zari borders, box folded', category: 'folding' },
+  {
+    imageId: 'gallery-ivory-brocade-silk',
+    title: 'Ivory Silk Saree with Magenta Brocade Border',
+    category: 'folding',
+    clientOriginal: true,
+    fullSize: {
+      src: `/images/gallery/${encodeURIComponent('Ivory Silk Saree with Magenta Brocade Border.png')}`,
+      width: 1449,
+      height: 1086,
+    },
+  },
   { imageId: 'gallery-purple-kanjeevaram', title: 'Purple Kanjeevaram', category: 'bridal' },
   { imageId: 'service-ready', title: 'Ready-to-wear purple saree', category: 'ready-to-wear' },
   { imageId: 'gallery-blue-handloom', title: 'Navy handloom', category: 'everyday' },

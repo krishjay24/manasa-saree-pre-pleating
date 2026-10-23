@@ -13,21 +13,21 @@ export const routes = {
     label: 'Home',
     title: 'Saree Pre-Pleating in Kovur, Nellore | Manasa Saree Pre-Pleating',
     description:
-      'Manasa Saree Pre-Pleating in Kovur, Nellore offers neat saree pre-pleating, box folding, bridal saree preparation, ready-to-wear sarees and ironing. Book on WhatsApp.',
+      'Manasa Saree Pre-Pleating in Kovur, Nellore offers neat saree pre-pleating, bridal saree preparation, ready-to-wear sarees and ironing. Book on WhatsApp.',
   },
   services: {
     path: '/services',
     label: 'Services',
     title: 'Services & Pricing | Manasa Saree Pre-Pleating, Kovur',
     description:
-      'Saree pre-pleating, box folding (madi), bridal special, ready-to-wear saree stitching, ironing & packing and express delivery in Kovur and Nellore.',
+      'Saree pre-pleating, bridal special, ready-to-wear saree stitching, ironing & packing and express delivery in Kovur and Nellore.',
   },
   gallery: {
     path: '/gallery',
     label: 'Gallery',
     title: 'Our Work | Saree Pre-Pleating Gallery – Manasa, Kovur',
     description:
-      'See pre-pleated, box-folded and bridal sarees prepared by Manasa Saree Pre-Pleating in Kovur, Nellore District.',
+      'See pre-pleated and bridal sarees prepared by Manasa Saree Pre-Pleating in Kovur, Nellore District.',
   },
   about: {
     path: '/about',

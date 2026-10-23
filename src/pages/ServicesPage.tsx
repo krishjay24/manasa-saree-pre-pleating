@@ -23,7 +23,7 @@ export default function ServicesPage() {
             Saree preparation, <em>done with care</em>
           </>
         }
-        description="Five services for everyday, festive and bridal sarees — with pickup in Kovur and express delivery when you need it."
+        description="Four services for everyday, festive and bridal sarees — with pickup in Kovur and express delivery when you need it."
       />
 
       <section className={styles.listSection} aria-label="Services">

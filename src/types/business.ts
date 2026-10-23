@@ -1,6 +1,6 @@
 import type { MediaId } from '../data/media'
 
-export type ServiceId = 'regular' | 'box-folding' | 'bridal' | 'ready-to-wear' | 'ironing'
+export type ServiceId = 'regular' | 'bridal' | 'ready-to-wear' | 'ironing'
 
 export interface Service {
   id: ServiceId

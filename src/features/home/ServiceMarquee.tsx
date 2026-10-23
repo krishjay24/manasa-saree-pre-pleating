@@ -3,7 +3,6 @@ import styles from './ServiceMarquee.module.css'
 const SERVICES = [
   'Saree Pre-Pleating',
   'Bridal Special',
-  'Box Folding',
   'Ready-to-Wear Saree',
   'Ironing & Packing',
 ] as const

@@ -47,6 +47,19 @@
   object-position: center 16%;
 }
 
+.figureFull {
+  width: min(100%, 1100px, calc((100dvh - 150px) * var(--ratio)));
+}
+
+.imageWrapFull {
+  aspect-ratio: auto;
+}
+
+.fullImage {
+  width: 100%;
+  height: auto;
+}
+
 .caption {
   display: flex;
   align-items: baseline;

@@ -54,14 +54,6 @@ const images = [
     credit: unsplash('Bulbul Ahmed', 'A7H3qmJTNJc'),
   },
   {
-    id: 'service-box',
-    folder: 'services',
-    alt: 'Red silk sarees with gold zari borders folded neatly in layers',
-    widths: STANDARD_WIDTHS,
-    temporary: true,
-    credit: unsplash('Souravi Sinha', 'nSBC88WAklo'),
-  },
-  {
     id: 'service-bridal',
     folder: 'services',
     alt: 'Bride-to-be in a sea green silk saree with traditional gold jewellery',
@@ -108,6 +100,13 @@ const images = [
     widths: STANDARD_WIDTHS,
     temporary: true,
     credit: unsplash('Dhruv vishwakarma', 'wgEWSRQuoEE'),
+  },
+  {
+    id: 'gallery-ivory-brocade-silk',
+    folder: 'gallery',
+    alt: 'Ivory silk saree with a magenta and purple brocade border, pleated and folded neatly',
+    widths: STANDARD_WIDTHS,
+    temporary: false,
   },
   {
     id: 'gallery-royal-blue-silk',

@@ -14,9 +14,8 @@ import { formatPrice } from '../src/utils/format'
 const byName = Object.fromEntries(services.map((service) => [service.name, service]))
 
 describe('service prices used by the estimator', () => {
-  it('reads the configured unit prices for all five services', () => {
+  it('reads the configured unit prices for all four services', () => {
     expect(byName['Regular Pre-Pleating']?.price).toBe(250)
-    expect(byName['Box Folding']?.price).toBe(150)
     expect(byName['Bridal Special']?.price).toBe(400)
     expect(byName['Ready-to-Wear Saree']?.price).toBe(500)
     expect(byName['Ironing & Packing']?.price).toBe(100)
@@ -48,7 +47,6 @@ describe('calculatePriceEstimate', () => {
   })
 
   it('updates the total when the service changes', () => {
-    expect(calculatePriceEstimate(byName['Box Folding'], 2).total).toBe(300)
     expect(calculatePriceEstimate(byName['Ready-to-Wear Saree'], 2).total).toBe(1000)
   })
 

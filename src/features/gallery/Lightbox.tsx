@@ -1,5 +1,5 @@
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
-import { useEffect, useRef } from 'react'
+import { type CSSProperties, useEffect, useRef } from 'react'
 import { ResponsiveImage } from '../../components/ui/ResponsiveImage'
 import { media } from '../../data/media'
 import type { GalleryItem } from './galleryData'
@@ -45,15 +45,29 @@ export function Lightbox({ items, index, onClose, onNavigate }: LightboxProps) {
             <X size={24} aria-hidden="true" />
           </button>
 
-          <figure className={styles.figure}>
-            <div className={styles.imageWrap}>
-              <ResponsiveImage
-                key={item.imageId}
-                image={media[item.imageId]}
-                sizes="(min-width: 900px) 560px, 92vw"
-                priority
-                className={styles.image}
-              />
+          <figure
+            className={`${styles.figure} ${item.fullSize ? styles.figureFull : ''}`}
+            style={item.fullSize ? ({ '--ratio': item.fullSize.width / item.fullSize.height } as CSSProperties) : undefined}
+          >
+            <div className={`${styles.imageWrap} ${item.fullSize ? styles.imageWrapFull : ''}`}>
+              {item.fullSize ? (
+                <img
+                  key={item.imageId}
+                  src={item.fullSize.src}
+                  alt={media[item.imageId].alt}
+                  width={item.fullSize.width}
+                  height={item.fullSize.height}
+                  className={styles.fullImage}
+                />
+              ) : (
+                <ResponsiveImage
+                  key={item.imageId}
+                  image={media[item.imageId]}
+                  sizes="(min-width: 900px) 560px, 92vw"
+                  priority
+                  className={styles.image}
+                />
+              )}
             </div>
             <figcaption className={styles.caption}>
               <span className={styles.title}>{item.title}</span>

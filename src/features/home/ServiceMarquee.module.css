@@ -99,7 +99,7 @@
     display: none;
   }
 
-  .group .item:nth-child(n + 6) {
+  .group .item:nth-child(n + 5) {
     display: none;
   }
 

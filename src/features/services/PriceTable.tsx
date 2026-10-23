@@ -20,14 +20,8 @@ export function PriceTable() {
           {services.map((service) => (
             <tr key={service.id}>
               <th scope="row">
-                {service.id === 'box-folding'
-                  ? `${service.name} (${service.localName})`
-                  : service.id === 'ironing'
-                    ? 'Ironing & Packing Only'
-                    : service.name}
-                {service.id !== 'box-folding' && (
-                  <span className={styles.local}>{service.localName}</span>
-                )}
+                {service.id === 'ironing' ? 'Ironing & Packing Only' : service.name}
+                <span className={styles.local}>{service.localName}</span>
               </th>
               <td>{service.fabrics}</td>
               <td className={styles.right}>

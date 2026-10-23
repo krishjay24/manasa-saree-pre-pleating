@@ -19,7 +19,7 @@ export function Hero() {
             Perfect Pleats. <em>Effortless</em> Elegance.
           </h1>
           <p className={styles.lead}>
-            Saree pre-pleating, box folding and bridal saree preparation in {business.location.short}. Your saree arrives
+            Saree pre-pleating and bridal saree preparation in {business.location.short}. Your saree arrives
             neatly pleated and pressed — ready to drape in minutes, for the office, a festival or your wedding day.
           </p>
           <div className={styles.actions}>

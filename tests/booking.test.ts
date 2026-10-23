@@ -4,7 +4,7 @@ import { buildBookingMessage } from '../src/features/booking/whatsappMessage'
 import type { Service } from '../src/types/business'
 import { formatEnquiryDate, formatEnquiryTime } from '../src/utils/whatsapp'
 
-const serviceIds = ['regular', 'box-folding', 'bridal', 'ready-to-wear', 'ironing']
+const serviceIds = ['regular', 'bridal', 'ready-to-wear', 'ironing']
 const today = new Date(2026, 9, 23)
 
 const valid: BookingFormValues = {

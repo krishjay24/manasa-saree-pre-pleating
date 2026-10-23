@@ -1,4 +1,4 @@
-import { Expand, ImageOff } from 'lucide-react'
+import { Expand, ImageOff, Star } from 'lucide-react'
 import { useState } from 'react'
 import { ResponsiveImage } from '../../components/ui/ResponsiveImage'
 import { media } from '../../data/media'
@@ -61,6 +61,11 @@ export function Gallery() {
                   priority={index < 2}
                   className={styles.image}
                 />
+                {item.clientOriginal && (
+                  <span className={styles.badge} role="img" aria-label="Client's original work">
+                    <Star size={20} fill="none" strokeWidth={2} aria-hidden="true" />
+                  </span>
+                )}
                 <span className={styles.overlay} aria-hidden="true">
                   <span className={styles.title}>{item.title}</span>
                   <Expand size={18} />
