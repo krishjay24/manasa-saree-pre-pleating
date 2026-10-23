@@ -1,0 +1,38 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 0;
+}
+
+.mark {
+  display: block;
+  height: 48px;
+  width: auto;
+  max-width: min(200px, 48vw);
+  object-fit: contain;
+  object-position: left center;
+}
+
+.light {
+  padding: 0.3rem 0.55rem 0.25rem;
+  border-radius: 8px;
+  background: var(--color-cream);
+}
+
+.light .mark {
+  height: 46px;
+  max-width: 200px;
+}
+
+@media (min-width: 900px) {
+  .mark {
+    height: 58px;
+    max-width: 250px;
+  }
+
+  .light .mark {
+    height: 52px;
+    max-width: 230px;
+  }
+}

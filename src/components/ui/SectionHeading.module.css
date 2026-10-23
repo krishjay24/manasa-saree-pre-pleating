@@ -1,0 +1,50 @@
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 680px;
+  margin-bottom: clamp(2rem, 1.5rem + 2vw, 3.25rem);
+}
+
+.center {
+  align-items: center;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.center .eyebrow::after {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: currentColor;
+}
+
+.left {
+  align-items: flex-start;
+}
+
+.description {
+  font-size: var(--text-lg);
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+}
+
+.ornament {
+  color: var(--color-gold);
+}
+
+.light .title {
+  color: var(--color-cream);
+}
+
+.light .title em {
+  color: var(--color-gold-light);
+}
+
+.light .eyebrow {
+  color: var(--color-gold);
+}
+
+.light .description {
+  color: rgba(255, 246, 229, 0.82);
+}

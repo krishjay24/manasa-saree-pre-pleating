@@ -1,0 +1,120 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 48px;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  transition:
+    background-color var(--duration) var(--ease),
+    color var(--duration) var(--ease),
+    border-color var(--duration) var(--ease),
+    box-shadow var(--duration) var(--ease),
+    transform var(--duration) var(--ease);
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.icon {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.sm {
+  min-height: 44px;
+  padding: 0.6rem 1.15rem;
+  font-size: var(--text-xs);
+}
+
+.lg {
+  min-height: 54px;
+  padding: 0.9rem 1.9rem;
+  font-size: var(--text-base);
+}
+
+.full {
+  width: 100%;
+}
+
+.primary {
+  background: var(--color-maroon);
+  color: var(--color-warm-white);
+  box-shadow: 0 8px 20px rgba(99, 27, 40, 0.22);
+}
+
+.primary:hover {
+  background: var(--color-maroon-dark);
+}
+
+.gold {
+  background: linear-gradient(180deg, #d4b57a 0%, var(--color-gold) 100%);
+  color: var(--color-maroon-dark);
+  box-shadow: 0 8px 20px rgba(166, 132, 77, 0.28);
+}
+
+.gold:hover {
+  background: linear-gradient(180deg, var(--color-gold-light) 0%, #d4b57a 100%);
+}
+
+.outline {
+  background: transparent;
+  border-color: var(--color-maroon);
+  color: var(--color-maroon);
+}
+
+.outline:hover {
+  background: var(--color-maroon);
+  color: var(--color-warm-white);
+}
+
+.light {
+  background: transparent;
+  border-color: rgba(234, 217, 184, 0.6);
+  color: var(--color-cream);
+}
+
+.light:hover {
+  background: rgba(255, 246, 229, 0.1);
+  border-color: var(--color-gold-light);
+}
+
+.link {
+  min-height: 44px;
+  padding: 0.5rem 0;
+  border-radius: 0;
+  color: var(--color-maroon);
+  border-bottom: 1px solid var(--color-gold);
+  letter-spacing: 0.06em;
+}
+
+.link:hover {
+  color: var(--color-maroon-dark);
+  border-bottom-color: var(--color-maroon);
+}
+
+@media (max-width: 380px) {
+  .button {
+    white-space: normal;
+  }
+}

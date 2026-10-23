@@ -1,0 +1,80 @@
+.wrapper {
+  padding: clamp(1rem, 0.5rem + 2vw, 2rem);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--color-warm-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead th {
+  padding: 0 var(--space-3) var(--space-3);
+  border-bottom: 1px solid var(--color-gold);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-align: left;
+  text-transform: uppercase;
+  color: var(--color-gold-text);
+}
+
+.table tbody th,
+.table td {
+  padding: var(--space-4) var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.table tbody th {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-maroon-dark);
+}
+
+.table td {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.local {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-gold-text);
+}
+
+.right {
+  text-align: right !important;
+  white-space: nowrap;
+}
+
+.price {
+  font-size: 1.5rem;
+}
+
+.addon {
+  background: var(--color-cream);
+}
+
+.notice {
+  margin-top: var(--space-4);
+}
+
+@media (max-width: 599px) {
+  .table thead th:nth-child(2),
+  .table td:nth-child(2) {
+    display: none;
+  }
+
+  .table tbody th,
+  .table td {
+    padding-inline: var(--space-2);
+  }
+}

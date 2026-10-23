@@ -1,0 +1,42 @@
+.stack {
+  --fab-inset: max(1.5rem, env(safe-area-inset-right, 0px));
+  --fab-bottom: max(1.5rem, env(safe-area-inset-bottom, 0px));
+  --fab-gap: 1.625rem;
+  --wa-size: 56px;
+  --top-size: 44px;
+
+  position: fixed;
+  right: var(--fab-inset);
+  bottom: var(--fab-bottom);
+  z-index: 40;
+  width: var(--wa-size);
+  height: calc(var(--wa-size) + var(--fab-gap) + var(--top-size));
+  pointer-events: none;
+}
+
+.stack > * {
+  pointer-events: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+}
+
+.stack :global([data-floating-whatsapp]) {
+  top: 0;
+}
+
+.stack :global([data-back-to-top]) {
+  bottom: 0;
+}
+
+:global(html:has(dialog[open])) .stack {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media (max-width: 479px) {
+  .stack {
+    --wa-size: 54px;
+  }
+}

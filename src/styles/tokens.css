@@ -1,0 +1,75 @@
+:root {
+  /* Brand palette — from client business profile */
+  --color-maroon: #631b28;
+  --color-maroon-dark: #4a131e;
+  --color-gold: #c6a26a;
+  --color-gold-muted: #a6844d;
+  --color-gold-light: #ead9b8;
+  --color-cream: #fbf6ee;
+  --color-warm-white: #fffdf8;
+  --color-text: #2e1a14;
+  --color-text-secondary: #6f514a;
+
+  /* Derived */
+  --color-border: rgba(166, 132, 77, 0.28);
+  --color-border-strong: rgba(166, 132, 77, 0.55);
+  --color-overlay: rgba(46, 26, 20, 0.88);
+  --color-error: #a32020;
+  --color-gold-text: #8a6a36;
+
+  /* Slim korvai rule — gold / maroon / gold, no dashed ticks */
+  --zari-band:
+    linear-gradient(var(--color-gold), var(--color-gold)) 0 0 / 100% 1px no-repeat,
+    linear-gradient(var(--color-maroon), var(--color-maroon)) 0 50% / 100% 2px no-repeat,
+    linear-gradient(var(--color-gold), var(--color-gold)) 0 100% / 100% 1px no-repeat;
+
+  /* Typography */
+  --font-heading: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.25rem + 1vw, 2rem);
+  --text-3xl: clamp(1.875rem, 1.4rem + 2vw, 2.75rem);
+  --text-4xl: clamp(2.25rem, 1.5rem + 3.2vw, 3.75rem);
+  --text-display: clamp(2.6rem, 1.6rem + 4.4vw, 4.75rem);
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-section: clamp(4rem, 2.5rem + 6vw, 7.5rem);
+
+  /* Layout */
+  --container-max: 1200px;
+  --container-narrow: 820px;
+  --container-pad: clamp(1rem, 0.5rem + 2.5vw, 2rem);
+  --header-height: 72px;
+
+  /* Shape & depth */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-arch: 999px 999px 18px 18px;
+  --shadow-sm: 0 2px 8px rgba(74, 19, 30, 0.06);
+  --shadow-md: 0 12px 32px rgba(74, 19, 30, 0.1);
+  --shadow-lg: 0 24px 60px rgba(74, 19, 30, 0.16);
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --duration: 220ms;
+}
+
+@media (min-width: 900px) {
+  :root {
+    --header-height: 84px;
+  }
+}

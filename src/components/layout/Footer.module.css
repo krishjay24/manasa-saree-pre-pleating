@@ -1,0 +1,144 @@
+.footer {
+  padding-block: var(--space-8) var(--space-5);
+  background: var(--color-maroon-dark);
+  background-image: radial-gradient(circle at 15% 0%, rgba(198, 162, 106, 0.12), transparent 45%);
+  color: rgba(255, 246, 229, 0.78);
+  font-size: var(--text-sm);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-7) var(--space-6);
+  grid-template-columns: 1fr;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  max-width: 360px;
+}
+
+.tagline {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-style: italic;
+  color: var(--color-gold-light);
+}
+
+.about {
+  line-height: 1.7;
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+}
+
+.social {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  color: var(--color-gold);
+  font-weight: 500;
+}
+
+.social:hover {
+  color: var(--color-gold-light);
+}
+
+.heading {
+  margin-bottom: var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.links {
+  display: grid;
+  gap: var(--space-1);
+  list-style: none;
+}
+
+.links a,
+.legal a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  transition: color var(--duration) var(--ease);
+}
+
+.links a:hover,
+.legal a:hover,
+.contact a:hover {
+  color: var(--color-warm-white);
+}
+
+.contact {
+  display: grid;
+  gap: var(--space-4);
+  list-style: none;
+}
+
+.contact li {
+  display: flex;
+  gap: var(--space-3);
+  line-height: 1.6;
+}
+
+.contact svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--color-gold);
+}
+
+.hoursRow {
+  display: block;
+}
+
+.ornament {
+  margin: var(--space-7) auto var(--space-5);
+  color: rgba(198, 162, 106, 0.6);
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(198, 162, 106, 0.2);
+  font-size: var(--text-xs);
+}
+
+/* Keep the copyright row clear of the floating WhatsApp button without extra empty height. */
+@media (max-width: 1024px) {
+  .bottom {
+    padding-right: calc(1.5rem + 56px);
+  }
+}
+
+.legal {
+  display: flex;
+  gap: var(--space-5);
+  list-style: none;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1.4fr 0.8fr 1fr 1.2fr;
+  }
+}

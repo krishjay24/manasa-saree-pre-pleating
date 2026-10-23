@@ -1,0 +1,25 @@
+.track {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  height: 3px;
+  pointer-events: none;
+  background: transparent;
+}
+
+.bar {
+  height: 100%;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left center;
+  background: linear-gradient(90deg, #a6844d 0%, #c6a26a 55%, #ead9b8 100%);
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar {
+    will-change: auto;
+  }
+}

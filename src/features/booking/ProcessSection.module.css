@@ -1,0 +1,11 @@
+.section {
+  padding-block: var(--space-section);
+}
+
+.cream {
+  background: var(--color-cream);
+}
+
+.white {
+  background: var(--color-warm-white);
+}

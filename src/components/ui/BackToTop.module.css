@@ -1,0 +1,39 @@
+.button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-gold);
+  border-radius: 50%;
+  background: var(--color-maroon);
+  color: var(--color-gold-light);
+  box-shadow: 0 6px 16px rgba(74, 19, 30, 0.22);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 180ms var(--ease),
+    visibility 180ms var(--ease),
+    background-color var(--duration) var(--ease);
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.button:hover {
+  background: var(--color-maroon-dark);
+}
+
+.button:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+}
