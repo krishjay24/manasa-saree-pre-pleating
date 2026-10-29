@@ -16,8 +16,8 @@ const byName = Object.fromEntries(services.map((service) => [service.name, servi
 describe('service prices used by the estimator', () => {
   it('reads the configured unit prices for all four services', () => {
     expect(byName['Regular Pre-Pleating']?.price).toBe(250)
-    expect(byName['Bridal Special']?.price).toBe(400)
-    expect(byName['Ready-to-Wear Saree']?.price).toBe(500)
+    expect(byName['Bridal Special']?.price).toBe(500)
+    expect(byName['Ready-to-Wear Saree']?.price).toBe(400)
     expect(byName['Ironing & Packing']?.price).toBe(100)
   })
 })
@@ -40,14 +40,14 @@ describe('calculatePriceEstimate', () => {
     const bridal = byName['Bridal Special']
     const estimate = calculatePriceEstimate(bridal, 3)
     expect(estimate.serviceName).toBe('Bridal Special')
-    expect(estimate.unitPrice).toBe(400)
+    expect(estimate.unitPrice).toBe(500)
     expect(estimate.quantity).toBe(3)
-    expect(estimate.subtotal).toBe(1200)
+    expect(estimate.subtotal).toBe(1500)
     expect(estimate.total).toBe(estimate.subtotal)
   })
 
   it('updates the total when the service changes', () => {
-    expect(calculatePriceEstimate(byName['Ready-to-Wear Saree'], 2).total).toBe(1000)
+    expect(calculatePriceEstimate(byName['Ready-to-Wear Saree'], 2).total).toBe(800)
   })
 
   it('does not apply unconfirmed bulk discounts', () => {

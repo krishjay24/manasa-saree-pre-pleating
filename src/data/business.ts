@@ -75,7 +75,7 @@ export const services: Service[] = [
     summary: 'Extra care, kanjeevaram & heavy work sarees',
     description:
       'Careful pleating for wedding and heavy silk sarees, with attention to zari borders and embellishments so the drape falls beautifully.',
-    price: 400,
+    price: 500,
     fabrics: 'Pattu, Kanjeevaram, Heavy work',
     occasions: ['Weddings', 'Engagements', 'Receptions', 'Muhurtham'],
     turnaround: '2–3 days',
@@ -88,7 +88,7 @@ export const services: Service[] = [
     summary: 'Attached to a petticoat with a zip — ready to wear',
     description:
       'The pleated saree is stitched onto a petticoat with a zip closure, so it can be worn quickly without draping skills.',
-    price: 500,
+    price: 400,
     fabrics: 'With petticoat stitching',
     occasions: ['First-time saree wearers', 'Quick changes', 'Functions'],
     imageId: 'service-ready',
