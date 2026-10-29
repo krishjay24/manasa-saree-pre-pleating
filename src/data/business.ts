@@ -14,7 +14,6 @@ export const business = {
   tagline: 'Perfect Pleats, Ready in Minutes',
   values: ['Professional', 'Hygienic', 'On-Time'],
   /** Stated in the client business profile. */
-  clientsServed: '500+',
   description:
     'Saree pre-pleating, bridal saree preparation and ready-to-wear saree stitching in Kovur, Nellore District.',
   location: {

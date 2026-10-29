@@ -51,8 +51,8 @@ export default function AboutPage() {
               or a festival, you can be ready in about two minutes with perfect pleats.
             </p>
             <p>
-              We are based in {business.location.locality}, {business.location.district} and trusted by{' '}
-              {business.clientsServed} clients — from college girls to brides. Each saree is handled with care, steam
+              We are based in {business.location.locality}, {business.location.district} serving clients
+            from college girls to brides. Each saree is handled with care, steam
               ironed, and packed like a gift.
             </p>
             <ul className={styles.values}>

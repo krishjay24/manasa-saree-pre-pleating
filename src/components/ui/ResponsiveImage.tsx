@@ -10,6 +10,22 @@ interface ResponsiveImageProps {
 }
 
 export function ResponsiveImage({ image, sizes, priority = false, className, alt }: ResponsiveImageProps) {
+  if (image.original) {
+    return (
+      <picture className="media-picture">
+        <img
+          className={className}
+          src={image.original.src}
+          alt={alt ?? image.alt}
+          width={image.original.width}
+          height={image.original.height}
+          loading={priority ? 'eager' : 'lazy'}
+          decoding="async"
+          fetchPriority={priority ? 'high' : 'auto'}
+        />
+      </picture>
+    )
+  }
   const largest = image.widths[image.widths.length - 1]
   const fallbackWidth = image.widths.includes(800) ? 800 : largest
   return (

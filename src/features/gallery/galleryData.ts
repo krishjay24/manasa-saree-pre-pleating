@@ -26,6 +26,27 @@ export const galleryCategories: GalleryCategory[] = [
 
 /** Each image appears once. Replace with client work photos as they become available. */
 export const galleryItems: GalleryItem[] = [
+  {
+    imageId: 'gallery-purple-green-pleats',
+    title: 'Purple & Green Fan Pleats',
+    category: 'folding',
+    clientOriginal: true,
+    fullSize: { src: '/images/gallery/purple-green-fan-pleats.jpeg', width: 1600, height: 1436 },
+  },
+  {
+    imageId: 'gallery-green-gold-pleats',
+    title: 'Green & Gold Floral Pleats',
+    category: 'folding',
+    clientOriginal: true,
+    fullSize: { src: '/images/gallery/green-gold-floral-pleats.jpeg', width: 650, height: 1600 },
+  },
+  {
+    imageId: 'gallery-gift-packed-sarees',
+    title: 'Pleated & Gift Packed Sarees',
+    category: 'folding',
+    clientOriginal: true,
+    fullSize: { src: '/images/gallery/gift-packed-pleated-sarees.jpeg', width: 1080, height: 1080 },
+  },
   { imageId: 'service-regular', title: 'Mint daily-wear drape', category: 'everyday' },
   { imageId: 'service-bridal', title: 'Sea green bridal silk', category: 'bridal' },
   { imageId: 'gallery-organza-print', title: 'Printed organza', category: 'everyday' },
@@ -44,10 +65,7 @@ export const galleryItems: GalleryItem[] = [
   { imageId: 'service-ready', title: 'Ready-to-wear purple saree', category: 'ready-to-wear' },
   { imageId: 'gallery-blue-handloom', title: 'Navy handloom', category: 'everyday' },
   { imageId: 'gallery-royal-blue-silk', title: 'Royal blue silk', category: 'bridal' },
-  { imageId: 'service-ironing', title: 'Pressed & packed with tassel care', category: 'folding' },
   { imageId: 'gallery-pastel-chiffon', title: 'Pastel chiffon', category: 'everyday' },
   { imageId: 'gallery-group-silks', title: 'Family function silks', category: 'ready-to-wear' },
   { imageId: 'gallery-festive-pattu', title: 'Festive pattu', category: 'bridal' },
-  { imageId: 'gallery-ikat-border', title: 'Ikat border, pressed flat', category: 'folding' },
-  { imageId: 'gallery-teal-satin', title: 'Soft satin folds', category: 'folding' },
 ]

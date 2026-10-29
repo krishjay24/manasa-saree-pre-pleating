@@ -38,8 +38,8 @@ export function AboutPreview() {
             }
           />
           <p className={styles.text}>
-            Based in {business.location.locality}, {business.location.district} and trusted by {business.clientsServed}{' '}
-            clients — from college girls to brides. Each saree is handled with care, steam ironed, and packed like a
+            Based in {business.location.locality}, {business.location.district} serving clients
+            from college girls to brides. Each saree is handled with care, steam ironed, and packed like a
             gift, ready to drape in about two minutes.
           </p>
           <Button to={routes.about.path} variant="link" iconEnd={<ArrowRight size={16} aria-hidden="true" />}>

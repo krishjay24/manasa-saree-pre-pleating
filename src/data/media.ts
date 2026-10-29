@@ -18,6 +18,7 @@ export interface MediaImage {
   widths: readonly number[]
   temporary: boolean
   credit?: MediaCredit
+  original?: { src: string; width: number; height: number }
 }
 
 const STANDARD_WIDTHS = [480, 800, 1200] as const
@@ -29,6 +30,30 @@ const unsplash = (name: string, photoId: string): MediaCredit => ({
 })
 
 const images = [
+  {
+    id: 'gallery-purple-green-pleats',
+    folder: 'gallery',
+    alt: 'Purple and gold saree arranged in fan pleats with an emerald green border',
+    widths: [1600],
+    temporary: false,
+    original: { src: '/images/gallery/purple-green-fan-pleats.jpeg', width: 1600, height: 1436 },
+  },
+  {
+    id: 'gallery-green-gold-pleats',
+    folder: 'gallery',
+    alt: 'Green saree with gold floral motifs and neatly aligned pleats',
+    widths: [650],
+    temporary: false,
+    original: { src: '/images/gallery/green-gold-floral-pleats.jpeg', width: 650, height: 1600 },
+  },
+  {
+    id: 'gallery-gift-packed-sarees',
+    folder: 'gallery',
+    alt: 'Colourful pleated sarees packed in clear covers, displayed with jewellery and warm lights',
+    widths: [1080],
+    temporary: false,
+    original: { src: '/images/gallery/gift-packed-pleated-sarees.jpeg', width: 1080, height: 1080 },
+  },
   {
     id: 'hero-cream-silk',
     folder: 'hero',

@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Star } from 'lucide-react'
 import { routes } from '../../app/routes'
 import { InstagramIcon } from '../../components/ui/BrandIcons'
 import { Button } from '../../components/ui/Button'
@@ -35,7 +35,10 @@ export function GalleryPreview() {
                 priority={index < 3}
                 className={styles.image}
               />
-              <span className={styles.caption}>{item.title}</span>
+              <span className={styles.caption}>
+                {item.clientOriginal && <Star size={18} aria-label="Original client work" />}
+                {item.title}
+              </span>
             </li>
           ))}
         </ul>
