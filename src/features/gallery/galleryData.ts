@@ -27,6 +27,20 @@ export const galleryCategories: GalleryCategory[] = [
 /** Each image appears once. Replace with client work photos as they become available. */
 export const galleryItems: GalleryItem[] = [
   {
+    imageId: 'gallery-magenta-gold-pleats',
+    title: 'Magenta & Gold Fan Pleats',
+    category: 'folding',
+    clientOriginal: true,
+    fullSize: { src: '/images/gallery/magenta-gold-fan-pleats.jpeg', width: 736, height: 736 },
+  },
+  {
+    imageId: 'gallery-lavender-gold-pleats',
+    title: 'Lavender & Gold Fan Pleats',
+    category: 'folding',
+    clientOriginal: true,
+    fullSize: { src: '/images/gallery/lavender-gold-fan-pleats.jpeg', width: 736, height: 736 },
+  },
+  {
     imageId: 'gallery-purple-green-pleats',
     title: 'Purple & Green Fan Pleats',
     category: 'folding',

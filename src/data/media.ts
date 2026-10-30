@@ -31,6 +31,22 @@ const unsplash = (name: string, photoId: string): MediaCredit => ({
 
 const images = [
   {
+    id: 'gallery-magenta-gold-pleats',
+    folder: 'gallery',
+    alt: 'Magenta saree with gold floral zari, arranged in fan pleats beside a broad gold border',
+    widths: [736],
+    temporary: false,
+    original: { src: '/images/gallery/magenta-gold-fan-pleats.jpeg', width: 736, height: 736 },
+  },
+  {
+    id: 'gallery-lavender-gold-pleats',
+    folder: 'gallery',
+    alt: 'Lavender and gold saree neatly folded with layered fan pleats and a paisley zari border',
+    widths: [736],
+    temporary: false,
+    original: { src: '/images/gallery/lavender-gold-fan-pleats.jpeg', width: 736, height: 736 },
+  },
+  {
     id: 'gallery-purple-green-pleats',
     folder: 'gallery',
     alt: 'Purple and gold saree arranged in fan pleats with an emerald green border',
