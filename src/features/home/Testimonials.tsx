@@ -15,6 +15,8 @@ function Stars({ count }: { count: number }) {
 }
 
 export function Testimonials() {
+  if (!testimonialsApproved) return null
+
   return (
     <section className={styles.section} aria-labelledby="testimonials-title">
       <Container>

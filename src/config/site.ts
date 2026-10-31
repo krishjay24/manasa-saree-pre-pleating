@@ -1,8 +1,6 @@
-const rawSiteUrl = (import.meta.env.VITE_SITE_URL ?? '').trim().replace(/\/+$/, '')
-
 export const siteConfig = {
-  /** Production origin, e.g. https://manasasareeprepleating.in — set VITE_SITE_URL once the domain is confirmed. */
-  url: rawSiteUrl || null,
+  /** Approved production origin shared by canonical URLs, sitemap and JSON-LD. */
+  url: 'https://manasa-saree-prepleating.netlify.app',
   lang: 'en-IN',
   locale: 'en_IN',
   themeColor: '#631B28',

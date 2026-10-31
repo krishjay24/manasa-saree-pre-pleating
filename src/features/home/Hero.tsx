@@ -16,7 +16,7 @@ export function Hero() {
         <div className={styles.copy}>
           <p className="eyebrow">{business.tagline}</p>
           <h1 id="hero-title" className={styles.title}>
-            Perfect Pleats. <em>Effortless</em> Elegance.
+            Saree Pre-Pleating. <em>Effortless</em> Elegance.
           </h1>
           <p className={styles.lead}>
             Saree pre-pleating and bridal saree preparation in {business.location.short}. Your saree arrives

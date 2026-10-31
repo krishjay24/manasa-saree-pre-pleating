@@ -1,6 +1,6 @@
 /**
  * Build-time prerendering: renders every public route to static HTML (with per-page <head> tags and JSON-LD),
- * writes dist/<route>/index.html, dist/404.html, robots.txt and (when VITE_SITE_URL is set) sitemap.xml.
+ * writes dist/<route>/index.html, dist/404.html, robots.txt and sitemap.xml.
  * Runs after `vite build` (client) and `vite build --ssr src/entry-server.tsx --outDir dist-ssr`.
  */
 import fs from 'node:fs/promises'
@@ -62,10 +62,9 @@ await fs.writeFile(
 )
 
 if (origin) {
-  const today = new Date().toISOString().slice(0, 10)
   const urls = prerenderRoutes
     .filter((route) => !route.noindex)
-    .map((route) => `  <url><loc>${origin}${route.path === '/' ? '' : route.path.slice(1)}</loc><lastmod>${today}</lastmod></url>`)
+    .map((route) => `  <url><loc>${origin}${route.path === '/' ? '' : route.path.slice(1)}</loc></url>`)
     .join('\n')
   await fs.writeFile(
     path.join(dist, 'sitemap.xml'),
@@ -73,7 +72,7 @@ if (origin) {
   )
   console.log('  wrote sitemap.xml')
 } else {
-  console.warn('  VITE_SITE_URL not set: skipped sitemap.xml, canonical URLs and absolute Open Graph image URLs.')
+  throw new Error('Production URL is required for sitemap and canonical URLs.')
 }
 
 await fs.rm(ssrDir, { recursive: true, force: true })
