@@ -19,12 +19,12 @@ export function MainLayout() {
       <InfoBar />
       <Header />
       <main id="main" tabIndex={-1}>
+        <AnalyticsConsent />
         <Suspense fallback={<div style={{ minHeight: '100vh' }} aria-busy="true" />}>
           <Outlet />
         </Suspense>
       </main>
       <Footer />
-      <AnalyticsConsent />
       <FloatingActions />
     </>
   )

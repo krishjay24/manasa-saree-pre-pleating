@@ -10,7 +10,7 @@ Collection also requires a production Vite build, the exact origin `https://mana
 
 ## Consent and data
 
-The implementation follows Evergreen's consent architecture and actual non-modal card: bottom/left 16px, maximum width 416px, mobile width `100vw - 104px`, 20px padding/radius, 40px buttons, 8px action gaps. Manasa's existing fonts and palette replace Evergreen's colors. There is no backdrop, focus trap or scroll lock. Footer **Analytics preferences** reopens it; **Decline** also withdraws previous permission.
+The consent notice appears inline below the header on page load when an eligible visitor has not chosen a preference. It occupies normal page space and scrolls with the content, with Manasa's existing fonts and palette. There is no floating bottom card, backdrop, focus trap or scroll lock. Footer **Analytics preferences** reopens the section, scrolls it into view and focuses it; **Decline** also withdraws previous permission.
 
 Before Allow, no Google tag is inserted, no analytics commands are queued and no consent-mode denied pings are sent. Preference (`granted`/`denied`) is stored under `manasa:ga4-consent` in localStorage; blocked storage uses memory for this page session. Reloads, cross-tab storage changes and window focus recheck consent. DNT/GPC override saved Allow. Withdrawal immediately sets Google's disable flag, clears pending commands, removes the loader and deletes accessible `_ga` cookies. Already transmitted/in-flight requests cannot be recalled. Re-allowing resumes with one view of the current page, without replaying earlier activity.
 
@@ -38,7 +38,7 @@ The account settings cannot be inspected or changed from this repository. Also v
 ## Release verification (manual deployment required)
 
 1. Run `npm run lint`, `npm test`, `npm run build`, then `npm run check:seo`. Automated browser checks must keep real Google endpoints blocked, including any simulated production tests.
-2. Review the desktop/mobile card; confirm keyboard focus, scrolling, unchanged gallery, estimator totals, WhatsApp booking and footer controls.
+2. Review the desktop/mobile inline notice; confirm keyboard focus, scrolling, unchanged gallery, estimator totals, WhatsApp booking and footer controls.
 3. After manually deploying with the production build flag, use a normal browser with cleared site data and DevTools Network filtering `gtag`/`collect`: there must be no analytics requests before Allow or after Decline. Check persisted rejection on reload.
 4. Allow, navigate forward/back and reload: one page view per route visit. Query/hash-only changes must not add views. Inspect outgoing `dl`, `dr` and event payloads for privacy; no query/hash/referrer/form values may appear.
 5. Verify all five custom events in GA4 Realtime or temporary Tag Assistant DebugView. Exercise valid and invalid enquiry forms; confirm no `generate_lead`. Compare a phone click and a WhatsApp click to ensure each is counted once.
@@ -48,6 +48,6 @@ No push, deployment, GA4 account configuration or live event verification is per
 
 ## Local verification results
 
-Verified 2 November 2026: ESLint passed; 52 Vitest tests passed (including nine analytics consent/privacy cases); production build with `VITE_ANALYTICS_ENABLED=true` passed; SEO checks passed for seven indexable routes and static robots/sitemap responses.
+Verified 3 November 2026: ESLint passed; 52 Vitest tests passed (including nine analytics consent/privacy cases); production build with `VITE_ANALYTICS_ENABLED=true` passed; SEO checks passed for seven indexable routes and static robots/sitemap responses.
 
-`node scripts/check-analytics-browser.mjs` passed in Chromium at 1440×1000, 390×844 and 320×740. It checks card geometry, Allow/Decline, persisted rejection, withdrawal/re-allow, cross-tab withdrawal, all five custom event names, route/back/query deduplication, sanitized payloads and independent webdriver/DNT/GPC blocking. Screenshots are written to ignored `analytics-review.local/`. For an external Playwright installation set `PLAYWRIGHT_MODULE` to its `index.mjs`; optionally set `CHROMIUM_EXECUTABLE`. No dependency is added to the application. All requests are intercepted: the production origin serves local `dist`, Google endpoints return an inert stub, and other origins are blocked. Positive tests simulate a normal browser only inside that isolated context. These checks validate local wiring, not Google's live collection or account settings.
+`node scripts/check-analytics-browser.mjs` passed in Chromium at 1440×1000, 390×844 and 320×740. It checks inline notice placement and footer focus, Allow/Decline, persisted rejection, withdrawal/re-allow, cross-tab withdrawal, all five custom event names, route/back/query deduplication, sanitized payloads and independent webdriver/DNT/GPC blocking. Screenshots are written to ignored `analytics-review.local/`. For an external Playwright installation set `PLAYWRIGHT_MODULE` to its `index.mjs`; optionally set `CHROMIUM_EXECUTABLE`. No dependency is added to the application. All requests are intercepted: the production origin serves local `dist`, Google endpoints return an inert stub, and other origins are blocked. Positive tests simulate a normal browser only inside that isolated context. These checks validate local wiring, not Google's live collection or account settings.

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { analyticsAllowed, consentEvents, getAnalyticsConsent, setAnalyticsConsent, trackEvent, trackPageView } from '../../lib/analytics'
 import styles from './AnalyticsConsent.module.css'
@@ -6,13 +6,30 @@ import styles from './AnalyticsConsent.module.css'
 export function AnalyticsConsent() {
   const { pathname } = useLocation()
   const [open, setOpen] = useState(false)
+  const panelRef = useRef<HTMLElement>(null)
+  const focusRequested = useRef(false)
+  useEffect(() => {
+    if (open && focusRequested.current) {
+      focusRequested.current = false
+      panelRef.current?.scrollIntoView({ block: 'start', behavior: 'instant' })
+      panelRef.current?.focus({ preventScroll: true })
+    }
+  }, [open])
   useEffect(() => {
     const sync = () => {
       trackPageView(pathname)
       setOpen(analyticsAllowed() && getAnalyticsConsent() === null)
     }
     const frame = requestAnimationFrame(sync)
-    const show = () => setOpen(true)
+    const show = () => {
+      if (panelRef.current) {
+        panelRef.current.scrollIntoView({ block: 'start', behavior: 'instant' })
+        panelRef.current.focus({ preventScroll: true })
+      } else {
+        focusRequested.current = true
+        setOpen(true)
+      }
+    }
     const storage = (event: StorageEvent) => { if (event.key === 'manasa:ga4-consent' || event.key === null) sync() }
     window.addEventListener(consentEvents.open, show)
     window.addEventListener(consentEvents.choice, sync)
@@ -39,7 +56,8 @@ export function AnalyticsConsent() {
   if (!open) return null
   const choose = (choice: 'granted' | 'denied') => { setAnalyticsConsent(choice); setOpen(false) }
   return (
-    <aside aria-label="Analytics preferences" className={styles.card}>
+    <aside ref={panelRef} tabIndex={-1} aria-label="Analytics preferences" className={styles.panel}>
+      <div className={styles.content}>
       <h2>Your privacy, your choice.</h2>
       <p>Allow Google Analytics to measure page views and selected interactions. No form details are sent. Analytics stays off until you choose.</p>
       {!analyticsAllowed() && <p>Analytics is disabled in this environment or by your browser privacy signal.</p>}
@@ -48,6 +66,7 @@ export function AnalyticsConsent() {
         <button type="button" onClick={() => choose('denied')}>Decline</button>
       </div>
       <Link to="/privacy-policy">Read our privacy policy</Link>
+      </div>
     </aside>
   )
 }
