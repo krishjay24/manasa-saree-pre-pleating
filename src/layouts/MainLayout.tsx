@@ -1,3 +1,4 @@
+import { AnalyticsConsent } from '../components/layout/AnalyticsConsent'
 import { Suspense } from 'react'
 import { Outlet } from 'react-router-dom'
 import { Footer } from '../components/layout/Footer'
@@ -23,6 +24,7 @@ export function MainLayout() {
         </Suspense>
       </main>
       <Footer />
+      <AnalyticsConsent />
       <FloatingActions />
     </>
   )

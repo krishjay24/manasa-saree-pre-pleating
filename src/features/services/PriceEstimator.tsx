@@ -1,3 +1,4 @@
+import { trackEvent } from '../../lib/analytics'
 import { Minus, Plus } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { WhatsAppButton } from '../../components/ui/WhatsAppButton'
@@ -23,7 +24,11 @@ export function PriceEstimator() {
   const message = useMemo(() => buildPriceEstimateMessage(estimate), [estimate])
 
   const setClampedQuantity = (value: number) => {
-    setQuantity(clampEstimateQuantity(value))
+    const next = clampEstimateQuantity(value)
+    if (next === quantity) return
+    trackEvent('price_estimator_use')
+    setQuantity(next)
+    trackEvent('price_estimate_completed')
   }
 
   return (
@@ -47,7 +52,11 @@ export function PriceEstimator() {
                 id="estimate-service"
                 className={styles.select}
                 value={service.id}
-                onChange={(event) => setServiceId(event.target.value as ServiceId)}
+                onChange={(event) => {
+                  trackEvent('price_estimator_use')
+                  setServiceId(event.target.value as ServiceId)
+                  trackEvent('price_estimate_completed')
+                }}
               >
                 {services.map((item) => (
                   <option key={item.id} value={item.id}>

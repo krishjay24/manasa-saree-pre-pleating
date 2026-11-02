@@ -1,3 +1,4 @@
+import { trackEvent } from '../lib/analytics'
 import { business } from '../data/business'
 
 export interface BookingEnquiryPayload {
@@ -128,6 +129,7 @@ export function openWhatsApp(message?: string, phone?: string | null): string | 
   const url = buildWhatsAppUrl(phone ?? getConfiguredWhatsAppNumber(), message)
   if (!url) return null
   if (typeof window !== 'undefined') {
+    trackEvent('whatsapp_click')
     window.open(url, '_blank', 'noopener,noreferrer')
   }
   return url

@@ -2,6 +2,12 @@
   command = "npm run build"
   publish = "dist"
 
+[context.deploy-preview.environment]
+  VITE_ANALYTICS_ENABLED = "false"
+
+[context.branch-deploy.environment]
+  VITE_ANALYTICS_ENABLED = "false"
+
 # Existing static files (including prerendered pages, robots and sitemap) win.
 # Unknown paths return the prerendered noindex page with an HTTP 404.
 [[redirects]]

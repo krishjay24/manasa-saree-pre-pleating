@@ -1,3 +1,4 @@
+import { openAnalyticsPreferences } from '../../lib/analytics'
 import { Clock, MapPin, Phone } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { routes } from '../../app/routes'
@@ -105,6 +106,7 @@ export function Footer() {
             © {year} K J Tech Solutions. All Rights Reserved.
           </p>
           <ul className={styles.legal}>
+            <li><button type="button" className={styles.preferences} onClick={openAnalyticsPreferences}>Analytics preferences</button></li>
             {legalNav.map((item) => (
               <li key={item.to}>
                 <Link to={item.to}>{item.label}</Link>

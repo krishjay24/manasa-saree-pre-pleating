@@ -6,7 +6,7 @@ import { PageHeader } from '../components/ui/PageHeader'
 import { business } from '../data/business'
 import styles from './LegalPage.module.css'
 
-const LAST_UPDATED = '23 October 2026'
+const LAST_UPDATED = '2 November 2026'
 
 export default function PrivacyPolicyPage() {
   return (
@@ -41,7 +41,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <ul>
               <li>
-                <strong>Nothing is stored or sent by this website.</strong> The form runs entirely in your browser. Your
+                <strong>Form details stay in your browser until you continue to WhatsApp.</strong> The form runs entirely in your browser. Your
                 details are not saved to any database or sent to our servers.
               </li>
               <li>
@@ -60,7 +60,10 @@ export default function PrivacyPolicyPage() {
 
           <div className={styles.block}>
             <h2>Cookies and tracking</h2>
-            <p>This website does not use cookies, analytics or advertising trackers.</p>
+            <p>When enabled on our production website, Google Analytics 4 loads only after you choose Allow analytics. Declining keeps it off. Do Not Track and Global Privacy Control override permission. We do not use advertising analytics or Google signals.</p>
+            <p>With permission, Google receives page views and interactions with WhatsApp, phone links, booking controls and the price estimator, along with technical browser and device information. Google may process this information on servers outside your country. Analytics cookies (_ga and _ga_*) can persist for up to 13 months, refreshed by activity. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google?s privacy policy</a>.</p>
+            <p>We send only predefined event names and page metadata. We do not send your name, phone number, messages, address, form contents, URL query strings, fragments or incoming referrers. Opening WhatsApp or calculating an estimate is not recorded as a confirmed lead.</p>
+            <p>Your analytics preference is saved in this browser?s local storage until you change it or clear site data. Use Analytics preferences in the footer to allow or decline at any time. Declining after allowing stops future collection and removes accessible analytics cookies; it does not delete information previously received by Google. Contact us for questions about previously collected information.</p>
           </div>
 
           <div className={styles.block}>

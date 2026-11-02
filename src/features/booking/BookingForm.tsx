@@ -1,3 +1,4 @@
+import { trackEvent } from '../../lib/analytics'
 import { CircleAlert, ExternalLink, Info, Send } from 'lucide-react'
 import { type FormEvent, type ReactNode, useId, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -110,6 +111,7 @@ export function BookingForm() {
       return
     }
 
+    trackEvent('booking_click')
     const service = services.find((s) => s.id === values.serviceId)
     const url = openWhatsApp(buildBookingMessage(values, service))
     if (!url) {
